@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400px" height="400px" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>400px Square</title>
+    <desc>Created with Sketch.</desc>
+    <g id="400px-Square" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group-6" transform="translate(6.000000, 0.000000)">
+            <path d="M0,400 L389,400 C368.654078,308.136666 352.003162,247.442164 339.047253,217.916492 C319.61339,173.627985 281.313945,73.4115347 259.936695,45.1473258 C238.559445,16.8831169 191.652276,0 173.926416,0 C156.200555,0 122.868322,35.1347577 110.302961,63.8947074 C97.7376005,92.6546572 55.8390326,203.896104 43.9612235,238.018433 C36.0426842,260.766653 21.388943,314.760508 0,400 Z" id="Path-14-Copy-3" fill="#0000FF"></path>
+            <text id="projects" font-family="CMUSerifRoman" font-size="40" font-weight="400" fill="#FFFFFF">
+                <tspan x="124.998047" y="237">projects</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
