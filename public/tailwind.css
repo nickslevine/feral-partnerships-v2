@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Hide scrollbar for Chrome, Safari and Opera */
+div::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+div {
+  -ms-overflow-style: none;
+}
+
+.unselectable {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+
+  /*
+      Introduced in Internet Explorer 10.
+      See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+    */
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.titleText {
+  width: 20rem;
+}
+
+.imageHeight {
+  max-height: 66%;
+  /* min-width: 100%; */
+  /* object-fit: contain; */
+  object-fit: scale-down;
+  padding-right: 5rem;
+  vertical-align: bottom;
+}
+
+.bioText {
+  min-width: 17rem;
+  max-width: 25rem;
+}
