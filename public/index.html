@@ -45,14 +45,17 @@
         <div class="text-5xl pl-16 leading-none pb-6">partnerships</div> -->
         <img src="img/Title.svg" alt="" class="titleText pb-12 lg:w-5/6" />
 
-        <div id="bioContainer" class="hidden lg:block lg:mr-12">
-          <div class="w-2/3 text-justify pb-6 unselectable bioText">
+        <div
+          id="bioContainer"
+          class="hidden lg:block lg:mr-12 text-sm lg:text-lg"
+        >
+          <div class="text-justify pb-6 unselectable bioText">
             is a collaboration between James Powell, Beth Fisher, Matthew
             Darmour-Paul & Enrico Brondelli di Brondello, born out of
             frustration with professional and academic practice standards in
             architecture around ecological and biodiversity loss.
           </div>
-          <div class="ml-32 text-justify w-1/3 pb-8 unselectable bioText">
+          <div class="ml-24 lg:ml-12 text-justify pb-8 unselectable bioText">
             We are interested in stories of entangled ecologies and world-making
             projects that meet at and within the boundaries of whatever is
             perceived to be ‘the built environment.’
@@ -65,7 +68,7 @@
     </div>
     <div
       id="buttonContainer"
-      class="lg:hidden absolute right-0 top-0 mr-12 pt-2 unselectable mt-12 text-lg"
+      class="lg:hidden absolute right-0 top-0 mr-12 mt-6 unselectable text-sm"
       onclick="handlePopup()"
     >
       <u>Bio</u>
@@ -75,6 +78,12 @@
   <script>
     var imageContainer = document.querySelector("#imageContainer");
     imageContainer.scrollTo(25, 0);
+
+    // window.addEventListener("wheel", function (e) {
+    //   if (e.deltaY > 0) item.imageContainer += 100;
+    //   else imageContainer.scrollLeft -= 100;
+    //   e.preventDefault();
+    // });
 
     function handlePopup() {
       var bioContainer = document.querySelector("#bioContainer");
