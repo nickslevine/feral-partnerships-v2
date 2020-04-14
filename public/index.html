@@ -37,6 +37,14 @@
         <img src="img/trees.jpg" class="imageHeight lg:pb-20" alt="" />
         <img src="img/green.jpg" class="imageHeight lg:float-right" alt="" />
       </div>
+      <!-- Arrows -->
+      <div
+        id="arrowContainer"
+        class="flex flex row unselectable lg:hidden w-screen justify-between pl-12 pr-12"
+      >
+        <div id="leftArrow" onclick="scrollBack()">⟵</div>
+        <div id="rightArrow" onclick="scrollRight()">⟶</div>
+      </div>
       <!-- Text -->
       <div
         class="lg:w-1/3 lg:mt-0 ml-12 mr-10 flex flex-col justify-center mt-12 text-lg"
@@ -79,24 +87,69 @@
     var imageContainer = document.querySelector("#imageContainer");
     imageContainer.scrollTo(25, 0);
 
-    // window.addEventListener("wheel", function (e) {
-    //   if (e.deltaY > 0) item.imageContainer += 100;
-    //   else imageContainer.scrollLeft -= 100;
-    //   e.preventDefault();
-    // });
+    var scrollDuration = 400;
+    var scrollOffset = 300;
+
+    function scrollRight() {
+      // imageContainer.scrollLeft += 100;
+      scrollTo(
+        imageContainer,
+        imageContainer.scrollLeft + scrollOffset,
+        scrollDuration
+      );
+    }
+
+    function scrollBack() {
+      // imageContainer.scrollLeft -= 100;
+      scrollTo(
+        imageContainer,
+        imageContainer.scrollLeft - scrollOffset,
+        scrollDuration
+      );
+    }
+
+    function scrollTo(element, to, duration) {
+      var start = element.scrollLeft,
+        change = to - start,
+        currentTime = 0,
+        increment = 20;
+
+      var animateScroll = function () {
+        currentTime += increment;
+        var val = Math.easeInOutQuad(currentTime, start, change, duration);
+        element.scrollLeft = val;
+        if (currentTime < duration) {
+          setTimeout(animateScroll, increment);
+        }
+      };
+      animateScroll();
+    }
+
+    Math.easeInOutQuad = function (t, b, c, d) {
+      t /= d / 2;
+      if (t < 1) return (c / 2) * t * t + b;
+      t--;
+      return (-c / 2) * (t * (t - 2) - 1) + b;
+    };
 
     function handlePopup() {
       var bioContainer = document.querySelector("#bioContainer");
       var imageContainer = document.querySelector("#imageContainer");
       var buttonContainer = document.querySelector("#buttonContainer");
+      var arrowContainer = document.querySelector("#arrowContainer");
+
       if (imageContainer.classList.contains("hidden")) {
         bioContainer.classList.add("hidden");
         imageContainer.classList.remove("hidden");
+        arrowContainer.classList.remove("hidden");
+
         buttonContainer.textContent = "Bio";
         buttonContainer.style.textDecoration = "underline";
       } else {
         bioContainer.classList.remove("hidden");
         imageContainer.classList.add("hidden");
+        arrowContainer.classList.add("hidden");
+
         buttonContainer.textContent = "Home";
         buttonContainer.style.textDecoration = "underline";
       }
