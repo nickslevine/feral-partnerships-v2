@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <!-- <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" /> -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/Favicon-04.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="img/Favicon-05.png" />
     <link
       rel="stylesheet"
       media="screen"
@@ -42,8 +42,8 @@
         id="arrowContainer"
         class="flex flex row unselectable lg:hidden w-screen justify-between pl-12 pr-12"
       >
-        <div id="leftArrow" onclick="scrollBack()">⟵</div>
-        <div id="rightArrow" onclick="scrollRight()">⟶</div>
+        <div id="leftArrow" onclick="scrollBack()"><img src="img/left-arrow.svg" width="40rem"></div>
+        <div id="rightArrow" onclick="scrollRight()"><img src="img/right-arrow.svg" width="40rem"></div>
       </div>
       <!-- Text -->
       <div
@@ -109,6 +109,18 @@
     }
 
     function scrollTo(element, to, duration) {
+      let leftArrow = document.querySelector('#leftArrow');
+      let rightArrow = document.querySelector('#rightArrow');
+      leftArrow.classList.add('pointer-events-none');
+      rightArrow.classList.add('pointer-events-none');
+
+      setTimeout(function(){
+        leftArrow.classList.toggle('pointer-events-none');
+        rightArrow.classList.toggle('pointer-events-none');
+      }, duration)
+
+
+
       var start = element.scrollLeft,
         change = to - start,
         currentTime = 0,
