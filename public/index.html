@@ -40,7 +40,7 @@
       <!-- Arrows -->
       <div
         id="arrowContainer"
-        class="flex flex row unselectable lg:hidden w-screen justify-between pl-12 pr-12"
+        class="flex flex row unselectable lg:hidden w-screen justify-between pl-12 pr-12 pb-8"
       >
         <div id="leftArrow" onclick="scrollBack()"><img src="img/left-arrow.svg" width="25rem"></div>
         <div id="rightArrow" onclick="scrollRight()"><img src="img/right-arrow.svg" width="25rem"></div>
@@ -85,7 +85,7 @@
 
   <script>
     var imageContainer = document.querySelector("#imageContainer");
-    imageContainer.scrollTo(25, 0);
+    imageContainer.scrollTo(100, 0);
 
     var scrollDuration = 400;
     var scrollOffset = 300;
